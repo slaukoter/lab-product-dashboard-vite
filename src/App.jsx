@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ProductList from "./components/ProductList";
 import "./App.css";
+import { Container, Typography } from "@mui/material";
 
 const App = () => {
   const [products, setProducts] = useState([
@@ -13,10 +14,12 @@ const App = () => {
     setProducts((prev) => prev.filter((p) => p.id !== id));
 
   return (
-    <div>
-      <h1>Product Dashboard</h1>
+    <Container maxWidth="sm">
+      <Typography variant="h4" gutterBottom>
+        Product Dashboard
+      </Typography>
       <ProductList products={products} onRemove={handleRemove} />
-    </div>
+    </Container>
   );
 };
 
